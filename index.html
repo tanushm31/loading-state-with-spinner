@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="MenuBar" class="flex h-1/6 w-full justify-start">
+        <button id="Tab1Button">
+            Tab1
+        </button>
+        <button id="Tab2Button">
+            Tab2
+        </button>
+    </div>
+    <div id="Tab1" class="w-full h-5/6">
+        <h1>Tab1</h1>
+        <p>Tab1</p>
+    </div>
+    <div id="Tab2" class="w-full h-5/6">
+        <h1>Tab2</h1>
+        <p>Tab2</p>
+    </div>
+    <script>
+        // const MenuBar = document.getElementById("MenuBar");
+        const Tab1 = document.getElementById("Tab1");
+        const Tab2 = document.getElementById("Tab2");
+        const loadingDiv = `<div class="flex justify-center items-center h-full w-full">
+                                <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+                                Loading...
+                            </div>`;
+        // on click of Tab1Button, 
+        // loadingDiv is shown for 2 seconds as overlay on top of tab 1 => Tab 1 contents should still be visible but with a loading overlay
+        // and then tab 2 is shown
+        document.getElementById("Tab1Button").addEventListener("click", () => {
+            // ADD LOADING DIV OVERLAY
+            
+            setTimeout(() => {
+                Tab1.style.display = "none";
+                Tab2.style.display = "block";
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
